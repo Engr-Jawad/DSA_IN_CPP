@@ -52,7 +52,7 @@ C++ Compiler (GCC / G++)
 Basic knowledge of C++
 ▶️ How to Run
 Clone the repository:
-git clone https://github.com/your-username/dsa-in-cpp.git
+git clone https://github.com/Engr-jawad/DSA_IN_CPP .git
 Navigate into the folder:
 cd dsa-in-cpp
 Compile and run a file:

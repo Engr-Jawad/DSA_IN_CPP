@@ -49,34 +49,27 @@
 #include<vector>
 #include<list>
 using namespace std;
-
-class graph {
+class graph{
     int v;
     list<int> * l;
-
     public:
-    // constructor 
     graph(int v){
         this -> v = v;
-        l = new list<int> [v];
+        l = new list<int>[v];
     }
+    void addedge(int vertex_one,int vertex_two){
+        l[vertex_one].push_back(vertex_two);
+        l[vertex_two].push_back(vertex_one);
 
-    void addedge(int v,int u){
-         if (u >= this->v || v >= this->v) {
-            cout << "Error: Vertex out of range!" << endl;
-            return;
-        }
-        l[u].push_back(v);
-        l[v].push_back(u);
     }
-    void adjlist(){
-        for (int i= 1; i<v;i++){
-            cout<< i << " : ";
-            for (int neigh : l[i]){
-                cout<< neigh << " : ";
+    void adjacencylist(){
+        for (int i=1;i<v;i++){
+            cout<<i<<" : ";
+            for(int neigh : l[i]){
+                cout<<neigh <<" : ";
+
             }
             cout<<endl;
-            
         }
     }
 };
@@ -91,6 +84,6 @@ int main(){
     g.addedge(6,4);
     g.addedge(6,7);
 
-    g.adjlist();
+    g.adjacencylist();
     return 0;
 }
